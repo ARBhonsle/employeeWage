@@ -13,5 +13,6 @@ namespace employeeWage
         public abstract void EmployeePartTimeCalcSwitch();
         public abstract void EmployeePartWage();
         public abstract void EmployeePartWageSwitch();
+        public abstract void EmployeeMonthlyWageCalc();
     }
 }

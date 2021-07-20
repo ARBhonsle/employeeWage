@@ -10,7 +10,9 @@ namespace employeeWage
         int WAGE_PER_HR= 20;
         int FULL_DAY = 8;
         int PART_TIME = 4;
-        double salary;
+        int WORKING_DAYS = 20;
+        double salary=0;
+        double monthlyWage = 0;
 
         public void  EmployeeAttendance()
         {
@@ -116,6 +118,29 @@ namespace employeeWage
                     break;
             }
             Console.WriteLine("Salary: " + salary);
+        }
+        public void EmployeeMonthlyWageCalc()
+        {
+            for(int i = 0; i < WORKING_DAYS; i++)
+            {
+                Random random = new System.Random();
+                attendance = random.Next(0, 3);                
+                switch (attendance)
+                {
+                    case 0:
+                        salary = 0;
+                        break;
+                    case 1:
+                        salary = WAGE_PER_HR * PART_TIME;
+                        break;
+                    case 2:
+                        salary = WAGE_PER_HR * FULL_DAY; ;
+                        break;
+                }
+                monthlyWage += salary;
+                Console.WriteLine(salary + " ");
+            }
+            Console.WriteLine("Monthly Salary: " + monthlyWage);
         }
     }
     

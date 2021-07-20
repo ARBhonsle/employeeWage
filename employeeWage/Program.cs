@@ -11,13 +11,13 @@ namespace employeeWage
             //emp.EmployeeAttendance();
             //emp.EmployeeDailyWage();
 
-           // emp.EmployeePartAttendance();
-           // emp.EmployeePartTimeWage();
+            // emp.EmployeePartAttendance();
+            // emp.EmployeePartTimeWage();
             //emp.EmployeePartTimeCalc();
             //emp.EmployeePartWage();
-
-            emp.EmployeePartTimeCalcSwitch();
-            emp.EmployeePartWageSwitch();
+            //emp.EmployeePartTimeCalcSwitch();
+            //emp.EmployeePartWageSwitch();
+            emp.EmployeeMonthlyWageCalc();
         }
     }
 }
