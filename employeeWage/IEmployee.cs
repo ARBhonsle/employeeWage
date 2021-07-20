@@ -8,5 +8,6 @@ namespace employeeWage
     {
         public abstract void  EmployeeAttendance();
         public abstract void EmployeeDailyWage();
+        public abstract void EmployeePartTimeCalc();
     }
 }

@@ -6,37 +6,60 @@ namespace employeeWage
 {
     class Employee : IEmployee
     {
-        bool isPresent;
+        bool isPresent=false;
+        bool isPartTime = false;
         int WAGE_PER_HR= 20;
         int FULL_DAY = 8;
+        int PART_TIME = 4;
         double salary;
 
         public void  EmployeeAttendance()
         {
             Random random = new System.Random();
-            int attendance=random.Next(0, 2);
+            int attendance=random.Next(0, 3);
             if (attendance == 0)
             {
                 Console.WriteLine("Employee Absent");
                 isPresent = false;
             }
+            else if (attendance == 1)
+            {
+                Console.WriteLine("Employee Present for Part Time");
+                isPartTime = true;
+            }
             else
             {
-                Console.WriteLine("Employee Present");
+                Console.WriteLine("Employee Present for Full Time");
                 isPresent = true;
             }
         }
         public void EmployeeDailyWage()
         {
-            if(!isPresent)
+            if (isPresent)
             {
-                salary = 0;
+                salary = WAGE_PER_HR * PART_TIME;
             }
             else
             {
+                salary = 0;
+            }
+            Console.WriteLine("Salary: " + salary);
+        }
+        public void EmployeePartTimeCalc()
+        {
+            if (isPresent && !isPartTime)
+            {
                 salary = WAGE_PER_HR * FULL_DAY;
             }
-            Console.WriteLine("Salary: "+salary);
+            else if (isPartTime && !isPresent)
+            {
+                salary = WAGE_PER_HR * PART_TIME;
+            }
+            else
+            {
+                salary = 0;
+            }
+            Console.WriteLine("Salary: " + salary);
         }
     }
 }
