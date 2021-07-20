@@ -16,11 +16,26 @@ namespace employeeWage
         public void  EmployeeAttendance()
         {
             Random random = new System.Random();
-            int attendance=random.Next(0, 3);
+            int attendance = random.Next(0, 2);
             if (attendance == 0)
             {
                 Console.WriteLine("Employee Absent");
                 isPresent = false;
+            }
+            else
+            {
+                Console.WriteLine("Employee Present");
+                isPresent = true;
+            }
+        }
+        public void EmployeePartAttendance()
+        {
+            Random random = new System.Random();
+            int attendance = random.Next(0, 3);
+            if (attendance == 0)
+            {
+                Console.WriteLine("Employee Absent");
+                isPresent = false; isPartTime = false;
             }
             else if (attendance == 1)
             {
@@ -45,7 +60,7 @@ namespace employeeWage
             }
             Console.WriteLine("Salary: " + salary);
         }
-        public void EmployeePartTimeCalc()
+        public void EmployeePartTimeWage()
         {
             if (isPresent && !isPartTime)
             {
@@ -61,5 +76,7 @@ namespace employeeWage
             }
             Console.WriteLine("Salary: " + salary);
         }
+        
     }
+    
 }

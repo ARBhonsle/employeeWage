@@ -7,7 +7,9 @@ namespace employeeWage
     interface IEmployee 
     {
         public abstract void  EmployeeAttendance();
+        public abstract void EmployeePartAttendance();
         public abstract void EmployeeDailyWage();
-        public abstract void EmployeePartTimeCalc();
+        public abstract void EmployeePartTimeWage();
+        
     }
 }
