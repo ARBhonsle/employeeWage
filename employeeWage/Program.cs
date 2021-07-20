@@ -12,6 +12,7 @@ namespace employeeWage
             //emp.EmployeeDailyWage();
             //emp.EmployeePartTimeCalc();
             //emp.EmployeePartWage();
+
             emp.EmployeePartTimeCalcSwitch();
             emp.EmployeePartWageSwitch();
         }
