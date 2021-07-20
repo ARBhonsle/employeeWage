@@ -13,6 +13,8 @@ namespace employeeWage
         int WORKING_DAYS = 20;
         double salary=0;
         double monthlyWage = 0;
+        int WORK_HRS = 100;
+        int hrs = 0;
 
         public void  EmployeeAttendance()
         {
@@ -138,10 +140,35 @@ namespace employeeWage
                         break;
                 }
                 monthlyWage += salary;
-                Console.WriteLine(salary + " ");
+                Console.WriteLine(salary);
             }
             Console.WriteLine("Monthly Salary: " + monthlyWage);
         }
-    }
-    
+        public void EmployeeConditionalWageCalc()
+        {
+            for (int i = 0; i < WORKING_DAYS && hrs<= WORK_HRS; i++)
+            {
+                Random random = new System.Random();
+                attendance = random.Next(0, 3);
+                switch (attendance)
+                {
+                    case 0:
+                        salary = 0;
+                        break;
+                    case 1:
+                        salary = WAGE_PER_HR * PART_TIME;
+                        hrs += PART_TIME;
+                        break;
+                    case 2:
+                        salary = WAGE_PER_HR * FULL_DAY; 
+                        hrs+=FULL_DAY;
+                        break;
+                }
+                monthlyWage += salary;
+                Console.WriteLine(salary);
+            }
+            Console.WriteLine("Monthly Salary: " + monthlyWage);
+            Console.WriteLine("Time: " + hrs);
+        }
+    }   
 }

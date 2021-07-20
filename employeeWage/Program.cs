@@ -17,7 +17,8 @@ namespace employeeWage
             //emp.EmployeePartWage();
             //emp.EmployeePartTimeCalcSwitch();
             //emp.EmployeePartWageSwitch();
-            emp.EmployeeMonthlyWageCalc();
+            //emp.EmployeeMonthlyWageCalc();
+            emp.EmployeeConditionalWageCalc();
         }
     }
 }
