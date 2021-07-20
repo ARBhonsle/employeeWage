@@ -10,8 +10,14 @@ namespace employeeWage
             IEmployee emp = new Employee();
             //emp.EmployeeAttendance();
             //emp.EmployeeDailyWage();
-            emp.EmployeePartAttendance();
-            emp.EmployeePartTimeWage();
+
+           // emp.EmployeePartAttendance();
+           // emp.EmployeePartTimeWage();
+            //emp.EmployeePartTimeCalc();
+            //emp.EmployeePartWage();
+
+            emp.EmployeePartTimeCalcSwitch();
+            emp.EmployeePartWageSwitch();
         }
     }
 }

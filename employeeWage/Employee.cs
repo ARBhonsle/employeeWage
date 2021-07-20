@@ -6,8 +6,7 @@ namespace employeeWage
 {
     class Employee : IEmployee
     {
-        bool isPresent=false;
-        bool isPartTime = false;
+        int attendance;
         int WAGE_PER_HR= 20;
         int FULL_DAY = 8;
         int PART_TIME = 4;
@@ -16,57 +15,86 @@ namespace employeeWage
         public void  EmployeeAttendance()
         {
             Random random = new System.Random();
-            int attendance = random.Next(0, 2);
+            attendance = random.Next(0, 2);
             if (attendance == 0)
             {
                 Console.WriteLine("Employee Absent");
-                isPresent = false;
             }
             else
             {
                 Console.WriteLine("Employee Present");
-                isPresent = true;
             }
         }
         public void EmployeePartAttendance()
         {
             Random random = new System.Random();
-            int attendance = random.Next(0, 3);
+            attendance = random.Next(0, 3);
             if (attendance == 0)
             {
                 Console.WriteLine("Employee Absent");
-                isPresent = false; isPartTime = false;
             }
             else if (attendance == 1)
             {
                 Console.WriteLine("Employee Present for Part Time");
-                isPartTime = true;
             }
             else
             {
                 Console.WriteLine("Employee Present for Full Time");
-                isPresent = true;
             }
         }
         public void EmployeeDailyWage()
         {
-            if (isPresent)
-            {
-                salary = WAGE_PER_HR * PART_TIME;
-            }
-            else
-            {
-                salary = 0;
-            }
-            Console.WriteLine("Salary: " + salary);
-        }
-        public void EmployeePartTimeWage()
-        {
-            if (isPresent && !isPartTime)
+            if (attendance != 0 )
             {
                 salary = WAGE_PER_HR * FULL_DAY;
             }
-            else if (isPartTime && !isPresent)
+            else
+            {
+                salary = 0;
+            }
+            Console.WriteLine("Salary: " + salary);
+        }
+        public void EmployeePartTimeCalc()
+        {
+            Random random = new System.Random();
+            attendance = random.Next(0, 3);
+            if (attendance == 0)
+            {
+                Console.WriteLine("Employee Absent");
+            }
+            else if (attendance == 1)
+            {
+                Console.WriteLine("Employee Present for Part Time");
+            }
+            else
+            {
+                Console.WriteLine("Employee Present for Full Time");
+            }
+        }
+        public void EmployeePartTimeCalcSwitch()
+        {
+            Random random = new System.Random();
+            attendance = random.Next(0, 3);
+            switch (attendance)
+            {
+                case 0:
+                    Console.WriteLine("Employee Absent");
+                    break;
+                case 1:
+                    Console.WriteLine("Employee Present for Part Time");
+                    break;
+                case 2:
+                    Console.WriteLine("Employee Present for Full Time");
+                    break;
+            }
+        }
+        public void EmployeePartWage()
+        {
+            if (attendance == 2)
+            {
+                salary = WAGE_PER_HR * FULL_DAY;
+            }
+            else if (attendance == 1)
             {
                 salary = WAGE_PER_HR * PART_TIME;
             }
@@ -76,7 +104,19 @@ namespace employeeWage
             }
             Console.WriteLine("Salary: " + salary);
         }
-        
+        public void EmployeePartWageSwitch()
+        {
+            switch (attendance)
+            {
+                case 0: salary = 0;
+                    break;
+                case 1: salary = WAGE_PER_HR * PART_TIME;
+                    break;
+                case 2: salary = WAGE_PER_HR * FULL_DAY; ;
+                    break;
+            }
+            Console.WriteLine("Salary: " + salary);
+        }
     }
     
 }

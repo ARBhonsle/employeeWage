@@ -9,7 +9,9 @@ namespace employeeWage
         public abstract void  EmployeeAttendance();
         public abstract void EmployeePartAttendance();
         public abstract void EmployeeDailyWage();
-        public abstract void EmployeePartTimeWage();
-        
+        public abstract void EmployeePartTimeCalc();
+        public abstract void EmployeePartTimeCalcSwitch();
+        public abstract void EmployeePartWage();
+        public abstract void EmployeePartWageSwitch();
     }
 }
