@@ -35,6 +35,7 @@ namespace employeeWage
             }
             Console.WriteLine();
             Console.WriteLine("Monthly Salary: " + monthlyWage);
+            Console.WriteLine("Hrs: " + hrs);
         }
     }
 }
