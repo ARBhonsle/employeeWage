@@ -8,17 +8,7 @@ namespace employeeWage
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program!");
             IEmployee emp = new Employee();
-            //emp.EmployeeAttendance();
-            //emp.EmployeeDailyWage();
-
-            // emp.EmployeePartAttendance();
-            // emp.EmployeePartTimeWage();
-            //emp.EmployeePartTimeCalc();
-            //emp.EmployeePartWage();
-            //emp.EmployeePartTimeCalcSwitch();
-            //emp.EmployeePartWageSwitch();
-            //emp.EmployeeMonthlyWageCalc();
-            emp.EmployeeConditionalWageCalc();
+            emp.EmployeeWage();
         }
     }
 }
