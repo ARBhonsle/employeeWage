@@ -7,28 +7,31 @@ namespace employeeWage
     class Employee : IEmployee
     {
         int attendance;
-        readonly int WAGE_PER_HR= 20, FULL_DAY = 8, PART_TIME = 4;
-        double salary;
+        readonly int WAGE_PER_HR = 20, FULL_DAY = 8, PART_TIME = 4, WORKING_DAYS=20;
+        double salary, monthlyWage = 0;
         public void EmployeeWage()
         {
-            Random random = new System.Random();
-            attendance = random.Next(0, 3);
-            switch (attendance)
+            for(int i = 0; i < WORKING_DAYS; i++)
             {
-                case 0:
-                    Console.WriteLine("Employee Absent");
-                    salary = 0;
-                    break;
-                case 1:
-                    Console.WriteLine("Employee Present for Part Time");
-                    salary = WAGE_PER_HR * PART_TIME;
-                    break;
-                case 2:
-                    Console.WriteLine("Employee Present for Full Time");
-                    salary = WAGE_PER_HR * FULL_DAY;
-                    break;
+                Random random = new System.Random();
+                attendance = random.Next(0, 3);                
+                switch (attendance)
+                {
+                    case 0:
+                        salary = 0;
+                        break;
+                    case 1:
+                        salary = WAGE_PER_HR * PART_TIME;
+                        break;
+                    case 2:
+                        salary = WAGE_PER_HR * FULL_DAY; ;
+                        break;
+                }
+                monthlyWage += salary;
+                Console.Write(salary + " ");
             }
-            Console.WriteLine("Salary: " + salary);
-        }               
+            Console.WriteLine();
+            Console.WriteLine("Monthly Salary: " + monthlyWage);
+        }
     }
 }
