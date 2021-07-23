@@ -8,8 +8,7 @@ namespace employeeWage
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program!");
             IEmployee emp = new Employee();
-            emp.EmployeeAttendance();
-            emp.EmployeeDailyWage();
+            emp.EmployeeWage();
 
         }
     }
