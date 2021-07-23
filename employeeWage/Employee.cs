@@ -7,7 +7,7 @@ namespace employeeWage
     class Employee : IEmployee
     {
         int attendance;
-        public void  EmployeeAttendance()
+        public void  EmployeeWage()
         {
             Random random = new System.Random();
              attendance=random.Next(0, 2);

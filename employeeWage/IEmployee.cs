@@ -6,6 +6,6 @@ namespace employeeWage
 {
     interface IEmployee 
     {
-        public abstract void  EmployeeAttendance();
+        public abstract void  EmployeeWage();
     }
 }
