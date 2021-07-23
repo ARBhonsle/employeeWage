@@ -6,7 +6,6 @@ namespace employeeWage
 {
     class Employee : IEmployee
     {
-        bool isPresent;
         int WAGE_PER_HR= 20;
         int FULL_DAY = 8;
         double salary;
