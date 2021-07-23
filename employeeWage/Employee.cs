@@ -146,7 +146,8 @@ namespace employeeWage
         }
         public void EmployeeConditionalWageCalc()
         {
-            for (int i = 0; i < WORKING_DAYS && hrs<= WORK_HRS; i++)
+            int day = 0;
+            while(day < WORKING_DAYS && hrs< WORK_HRS)
             {
                 Random random = new System.Random();
                 attendance = random.Next(0, 3);
@@ -166,6 +167,7 @@ namespace employeeWage
                 }
                 monthlyWage += salary;
                 Console.WriteLine(salary);
+                day++;
             }
             Console.WriteLine("Monthly Salary: " + monthlyWage);
             Console.WriteLine("Time: " + hrs);
